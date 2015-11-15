@@ -1,4 +1,7 @@
 <template>
+  <section>
+    <div repeat.for="item of obj.arr">${item.name}</div>
+  </section>
   <section class="au-animate">
     <h2>${heading}</h2>
     <form role="form" submit.delegate="submit()">
