@@ -1,23 +1,30 @@
 <template>
-  <section>
-    <div repeat.for="item of obj.arr">${item.name}</div>
-  </section>
-  <section class="au-animate">
-    <h2>${heading}</h2>
-    <form role="form" submit.delegate="submit()">
-      <div class="form-group">
-        <label for="fn">First Name</label>
-        <input type="text" value.bind="firstName" class="form-control" id="fn" placeholder="first name">
-      </div>
-      <div class="form-group">
-        <label for="ln">Last Name</label>
-        <input type="text" value.bind="lastName" class="form-control" id="ln" placeholder="last name">
-      </div>
-      <div class="form-group">
-        <label>Full Name</label>
-        <p class="help-block">${fullName | upper}</p>
-      </div>
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>
-  </section>
+    <section>
+        <require from="comp"></require>
+        <h2>binding context test</h2>
+        <comp parent.bind="$this"></comp>
+        <comp repeat.for="i of 5" parent.bind="$parent"></comp>
+    </section>
+    <section>
+        <h2>repeat binding test</h2>
+        <div repeat.for="item of obj.arr">${item.name}</div>
+    </section>
+    <section class="au-animate">
+        <h2>${heading}</h2>
+        <form role="form" submit.delegate="submit()">
+            <div class="form-group">
+                <label for="fn">First Name</label>
+                <input type="text" value.bind="firstName" class="form-control" id="fn" placeholder="first name">
+            </div>
+            <div class="form-group">
+                <label for="ln">Last Name</label>
+                <input type="text" value.bind="lastName" class="form-control" id="ln" placeholder="last name">
+            </div>
+            <div class="form-group">
+                <label>Full Name</label>
+                <p class="help-block">${fullName | upper}</p>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </section>
 </template>
