@@ -8,6 +8,12 @@ export class App {
             nav: true,
             title: 'Welcome'
         }, {
+            route: ['code-mirror'],
+            name: 'code-mirror',
+            moduleId: 'code-mirror',
+            nav: true,
+            title: 'CodeMirror'
+        }, {
             route: ['parent/:id'],
             name: 'parent',
             moduleId: 'parent',

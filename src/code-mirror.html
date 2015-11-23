@@ -1,0 +1,28 @@
+<template>
+    <style>
+    .CodeMirror {
+        line-height: 1.2;
+    }
+    
+    @media screen and (min-width: 1300px) {
+        article {
+            max-width: 1000px;
+        }
+        #nav {
+            border-right: 499px solid transparent;
+        }
+    }
+    
+    span.clicky {
+        cursor: pointer;
+        background: #d70;
+        color: white;
+        padding: 0 3px;
+        border-radius: 3px;
+    }
+    </style>
+    <require from="codemirror/lib/codemirror.css"></require>
+    <require from="codemirror/addon/merge/merge.css"></require>
+    <require from="codemirror/addon/fold/foldgutter.css"></require>
+    <div id="view"></div>
+</template>
